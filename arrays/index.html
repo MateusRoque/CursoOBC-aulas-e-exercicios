@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+  const arr = ["Frodo", "Sam", "Merry", "Pippin", "Gandalf", "Aragorn", "Legolas", "Gimli"]
+  const arr2 = ["Joao", "Roberto", "Mica", "Julia", "Lara Loira Ararica"]
+
+  //PUSH - ADD ELEMENTOS tbm retorna o tamanho do array
+
+  // let tamanhoArr = arr.push("Mateus");
+  // arr.push("Roque")
+  // console.log(tamanhoArr)
+
+  // //UNSHIFT - adiciona no inicio doa rray tbm retorna o tamanho do array
+
+  // let tamanho = arr.unshift("Rafa4564el")
+  // console.log(arr)
+  // console.log(tamanho)
+
+  // //POP - remove e devolve o elemento
+
+  // const ultimoElemento = arr.pop();
+  // console.log(ultimoElemento)
+
+  // //Shift - remove no começo do array
+
+  // console.log(arr)
+  // arr.shift()
+  // console.log(arr)
+
+  // //pesquisar por elemento
+  // //includes - verifca se há o elemento no array - volta um boolean
+
+  // const inclue = arr.includes("Mateus")
+  // console.log(inclue)
+
+  // //indexOf - saber o indice do elemento
+
+  const index = arr.indexOf("Legolas")
+  // console.log(index)
+
+  // //cortar e concatenar um array
+
+  // // slice - corta o array
+  // const cortado = arr.slice(0,4
+  // )
+  // console.log(cortado)
+
+  // CONCAT - jjunta dois arrays - armazenar em variavel
+  const concatenar = arr.concat(arr2)
+
+  // console.log(concatenar)
+
+  // SUBSTITUIÇÃO DE ELEMENTOS
+  // SPLICE
+    //                              qunatidade de item que sai quando substitui
+  const a = concatenar.splice(index, 1, "comedor de xota ")
+  console.log(a)
+  console.log(concatenar)
+
+  // ITERAR SOBRE ELEMENTOS
+  for(let i = 0; i < concatenar.length; i++){
+    const elemento = concatenar[i]
+    console.log(elemento + " se encontra na posição " + i)
+  }
+  </script>
+</body>
+</html>

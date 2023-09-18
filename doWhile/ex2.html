@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex2</title>
+</head>
+<body>
+  <script>
+
+  let quantidadeInicial = parseInt(prompt("Quanto você tem de dinheiro?"));
+  let opcao = prompt("[1] Sacar \n [2] Depositar \n [3] Sair");
+  let quantidadeSaque = 0;
+  let quantidadeDeposito = 0;
+
+  do {
+    switch (opcao) {
+    case "1":
+      if(quantidadeInicial <= 0){
+        alert("Você não tem saldo o suficiente!");
+      } else {
+        quantidadeSaque = parseInt(prompt("Quantos você quer sacar?"));
+        if (quantidadeSaque > quantidadeInicial){
+          alert("Você não pode sacar!")
+        } else {
+          quantidadeInicial -= quantidadeSaque;
+          alert("Saque feito! Saldo: "+ quantidadeInicial)
+        }
+      }
+    break;
+    case "2":
+      quantidadeDeposito = parseInt(prompt("Quantos você quer depositar?"));
+      quantidadeInicial += quantidadeDeposito;
+      alert("Depósito feito! Saldo: "+ quantidadeInicial)
+    break;
+    
+  }
+    opcao = prompt("[1] Sacar \n [2] Depositar \n [3] Sair")
+  } while (opcao !== "3")
+
+  alert("Saldo total: " + quantidadeInicial)
+  
+  </script>
+</body>
+</html>

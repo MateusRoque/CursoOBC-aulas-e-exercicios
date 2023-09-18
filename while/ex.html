@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício</title>
+</head>
+<body>
+  <script>
+
+    function verificaNull(variavelCheck){
+      while(variavelCheck === ""){
+        variavelCheck = prompt("Diga, por favor!");
+    }
+    }
+
+    const nome = prompt("Qual o seu nome");
+    verificaNull(nome);
+    let pergunta = prompt("Você já visitou alguma cidade? [S/N]").toUpperCase();
+    console.log(pergunta)
+    verificaNull(pergunta);
+    let cidades = [];
+    
+    while(pergunta !== "N"){
+  
+      let cidade = prompt("Qual foi a cidade?");
+      verificaNull(cidade);
+      cidades.push(cidade);
+      console.log(cidades)
+      pergunta = prompt("Você já visitou alguma cidade? [S/N]")
+    }
+
+    const quantasCidades = cidades.length;
+    console.log(cidades.length)
+    alert("Você visitou " + quantasCidades + " cidades!");
+    for(let i = 0; i < quantasCidades; i++){
+      alert(`As cidades foram: ${cidades[i]}`)
+    }
+
+
+  </script>
+</body>
+</html>

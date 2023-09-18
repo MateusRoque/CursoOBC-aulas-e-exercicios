@@ -1,0 +1,21 @@
+let pacientesEmEspera = ["Mateus", "José", "Ricardo", "Astolfo", "Jeremias"]
+  let listaArrumada = []
+  for(let i = 0; i < pacientesEmEspera.length; i++){
+    const pacientes = pacientesEmEspera[i]
+    let paciente = i + 1 +"º " + pacientes
+    listaArrumada.push(paciente)
+  } 
+  
+  let opcao = prompt(listaArrumada + " \n O que você desea fazer? \n [1] Novo Paciente \n [2] Consultar paciente \n [3] Sair")
+  
+  switch (opcao) {
+    case "1":
+      let nomePaciente = prompt("Qual o nome do paciente?")
+      pacientesEmEspera.push(nomePaciente);
+      break;
+    case "2":
+      alert( conspacientesEmEspera.shift());
+      break;
+
+    case "3":
+      break;

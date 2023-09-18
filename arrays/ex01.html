@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EX01</title>
+</head>
+<body>
+  <script>
+
+  let pacientesEmEspera = []
+  let opcao = ""
+
+  do{
+    let pacientes = ""
+
+    for(let i = 0; i < pacientesEmEspera.length; i++){
+      pacientes += (i + 1) + ". " + pacientesEmEspera[i] + "\n"
+    }
+
+    opcao = prompt("Pacientes: \n" + pacientes + "\n" + "\n Escolha uma opção: \n [1] Novo paciente \n [2] Consultar paciente \n [3] Sair")
+
+    switch (opcao) {
+      case "1":
+        const novoPaciente = prompt("Qual o nome do paciente?")
+        pacientesEmEspera.push(novoPaciente)
+        break;
+      case "2":
+        const pacienteConsultado = pacientesEmEspera.shift()
+        alert("Paciente consultado: " + pacienteConsultado)
+        break;
+      case "3":
+        alert("Encerrando")
+        break;
+
+      default:
+        alert("Opção inválida")
+        break;
+    }
+  } while(opcao !== "3")
+  </script>
+</body>
+</html>

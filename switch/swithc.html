@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Conversão</h1>
+    <script>
+      const metro = prompt("Valor em METROS para conversão:");
+      const opcao = prompt(
+        "1) milímetros(mm)\n 2) centímetros(cm)\n 3) decímetro(dm)\n 4) decâmetro(dam) \n 5) hectômetro(hm) \n 6) quilômetro (km)"
+      );
+      let convertido = 0;
+      switch (opcao) {
+        case "1":
+          convertido = metro * 1000;
+          break;
+        case "2":
+          convertido = metro * 100;
+          break;
+        case "3":
+          convertido = metro * 10;
+          break;
+        case "4":
+          convertido = metro / 10;
+          break;
+        case "5":
+          convertido = metro / 100;
+          break;
+        case "6":
+          convertido = metro / 1000;
+          break;
+        default:
+          alert("Opcção inválida!");
+      }
+
+      alert(`1) milímetros(mm)\n 2) centímetros(cm)\n 3) decímetro(dm)\n 4) decâmetro(dam) \n 5) hectômetro(hm) \n 6) quilômetro (km)\n \n
+      O valor ${metro} convertido para ${opcao} é: ${convertido}`);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Teste de velocidade</h1>
+    <script>
+      const nome1 = prompt("Qual o nome do carro?");
+      const vel1 = prompt("Qual a velocidade do carro?");
+
+      const nome2 = prompt("Qual o nome do carro?");
+      const vel2 = prompt("Qual a velocidade do carro?");
+
+      if (vel1 > vel2) {
+        alert(`O carro ${nome1} é mais rápido que o ${nome2}`);
+      } else if (vel2 > vel1) {
+        alert(`O carro ${nome2} é mais rápido que o ${nome1}`);
+      } else {
+        alert("As velocidades são iguais!");
+      }
+    </script>
+  </body>
+</html>

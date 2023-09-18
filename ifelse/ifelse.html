@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>OLA</h1>
+    <script>
+      const nomeAtacante = prompt("Qual o nome do seu personagem?");
+      let poderAtaque = prompt("Qual o poder de ataque desse personagem?");
+      const nomeDefensor = prompt("Qual o nome do defensor?");
+      let pontosDeVida = prompt("Quais os pontos de vida desse personagem?");
+      let poderDefesa = prompt("Qual o poder de defesa desse defensor? ");
+      const escudo = prompt("Ele usa escudo? [S]/[N]");
+
+      let danoCausado = 0;
+      if (poderAtaque > poderDefesa && escudo === "N") {
+        danoCausado = poderAtaque - poderDefesa;
+        let situacao = "sem ESCUDO ";
+        alert(situacao);
+      } else if (poderAtaque > poderDefesa && escudo === "S") {
+        danoCausado = (poderAtaque - poderDefesa) / 2;
+        situacao = "com ESCUDO";
+        alert(situacao);
+      } else if (poderAtaque <= poderDefesa) {
+        danoCausado = 0;
+        situacao = "ataque nulo";
+        alert(situacao);
+      }
+
+      const vidaDefensor = pontosDeVida - danoCausado;
+      alert(`${danoCausado} - ${pontosDeVida} = ${vidaDefensor}`);
+    </script>
+  </body>
+</html>

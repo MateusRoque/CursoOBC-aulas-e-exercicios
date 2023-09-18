@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>OLA</h1>
+  <script>
+  let listaImoveis = [];
+
+  do{
+    option = prompt("Imóveis salvos: " + listaImoveis.length +  "\n O que deseja fazer? \n [1] Cadastrar imóvel \n [2] Mostrar todos imóveis salvos");
+
+    switch (option) {
+      case "1":
+        let option, name, bedroom, bathroom,garage= "";
+        let quickList = [];
+        name = prompt("Qual o nome do proprietário?");
+        bedroom = prompt("Quantos quartos?");
+        bathroom = prompt("Quantos banheiros?");
+        garage = prompt("Tem garagem? [sim][nao]");
+
+        quickList.push(name, bedroom, bathroom, garage);
+        listaImoveis.push(quickList);
+        break;
+
+      case "2":
+        console.log("aqui")
+        for(let i = 0; i < listaImoveis.length; i++){
+          alert("Nome: " + listaImoveis[i][0] + "\n quarto: " + listaImoveis[i][1] + "\n banheiro: "+ listaImoveis[i][2] + "\n garagem: " + listaImoveis[i][3])
+        };
+        break;
+      case "3":
+        alert("Encerrando...");
+        break;
+      default:
+        alert("Opção inválida!");
+        break;
+    }
+  }while(option !== "3");
+  </script>
+</body>
+</html>
