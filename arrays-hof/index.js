@@ -35,15 +35,23 @@ const personagens = [
 // console.log(nivelTotal)
 
 
-const racas = personagens.reduce((valorAcumulado, personagem) => {
-  if (valorAcumulado[personagem.raca]){
-    valorAcumulado[personagem.raca].push(personagem)
-  } else {
-    valorAcumulado[personagem.raca] = [personagem]
-  }
+// const racas = personagens.reduce((valorAcumulado, personagem) => {
+//   if (valorAcumulado[personagem.raca]){
+//     valorAcumulado[personagem.raca].push(personagem)
+//   } else {
+//     valorAcumulado[personagem.raca] = [personagem]
+//   }
 
-  return valorAcumulado
+//   return valorAcumulado
 
-}, {})
+// }, {})
 
-console.log(racas)
+// console.log(racas)
+
+// SORT -- forma de ordenar um array
+//  ALTERA OS VALORES ORIGINAI DO ARRAY
+personagens.sort((a, b) => {
+  return a.nivel - b.nivel
+})
+
+console.log(personagens)
