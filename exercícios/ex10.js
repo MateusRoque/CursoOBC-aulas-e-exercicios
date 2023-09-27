@@ -45,12 +45,43 @@ function createNewVaga(){
 function showVagaByIndex(){
   let indexVaga = parseInt(prompt("Qual a vaga você deseja visualizar?"))
   const showVaga = vagas[indexVaga]  
-  const candidatos = vagas[indexVaga].candidatos.forEach(() => {})
+  const candidatos = vagas[indexVaga].candidatos.reduce((texto, candidato) => {
+    return texto + "\n - " + candidato
+  })
   alert("\n Nome: "+ showVaga.nome+ 
         "\n Descrição: " + showVaga.descricao + 
         "\n Data Limite: " + showVaga.dataLimite+ 
         "\n Quantidade de candidatos: " + showVaga.candidatos.length + 
-        "\n Candidatos: " + showVaga.candidatos)
+        "\n Candidatos incritos: " + candidatos)
+}
+
+function subscribeCandidato(){
+  const nome = prompt("Qual o nome do candidato?")
+  const indexVaga = prompt("Qual o indice da vaga? ")
+  const confirmPrompt = confirm("Você está de acordo com essas alterações? \n" +
+                          "\n Nome da vaga: " + vagas[indexVaga].nome +
+                          "\n Descrição: " + vagas[indexVaga].descricao +
+                          "\n Data limite: " + vagas[indexVaga].dataLimite )
+  if(confirmPrompt){
+    return vagas[indexVaga].candidatos.push(nome)
+  }
+}
+
+function deleteVaga(){
+  const indexVaga = prompt("Qual o indice da vaga que deseja excluir?")
+  const vagaWithIndex = vagas[indexVaga]
+  const candidatos = vagaWithIndex.candidatos.reduce((text, candidato) => {
+    return text + " \n - " + candidato
+  }, "")
+
+  const confirmPromt = confirm("Você realmente deseja excluir esta vaga?  \n " + " Nome da vaga: " + vagaWithIndex.nome 
+  + "\n Descrição: " + vagaWithIndex.descricao
+  + "\n Data Limite: " + vagaWithIndex.dataLimite
+  + "\n Candidatos: " + candidatos)
+
+  if(confirmPromt){
+    return vagas.splice(vagaWithIndex)
+  }
 }
 
 
@@ -64,32 +95,39 @@ function execute(){
     switch (optionChosen) {
       case "1":
         alert("op 1")
-        //A opção de listar as vagas deve mostrar o índice, o nome e a quantidade de candidatos inscritos de todas as vagas.
         showCandidates()
+
         optionChosen
       break;
+
       case "2":
         alert("op 2")
         createNewVaga()
+
         optionChosen
-        //A opção de criar uma nova vaga deve pedir um nome para a vaga, uma descrição e uma data limite, e também deve pedir que o usuário confirme as informações antes de salvá-las.
       break;
+
       case "3":
         alert("op 3")
         showVagaByIndex()
+
         optionChosen
-        //A opção de visualizar uma vaga deve pedir o índice da vaga e mostrar todas as informações dela: índice, nome, descrição, data limite, quantidade de candidatos e o nome dos candidatos.
       break;
+
       case "4":
         alert("op 4")
+        subscribeCandidato()
+
         optionChosen
-        //A opção de inscrever um candidato em uma vaga de pedir o nome do candidato, o índice da vaga e então uma confirmação exibindo as informações da vaga antes de salvar o candidato na vaga.
       break;
+
       case "5":
         alert("op 5")
+        deleteVaga()
+
         optionChosen
-        //A opção de excluir uma vaga deve pedir o índice da vaga, mostrar suas informações e pedir que o usuário confirme a exclusão da vaga antes de realmente exclui-la.
       break;
+
       case "6":
         alert("Saindo...")
       break;
