@@ -47,7 +47,7 @@ function showVagaByIndex(){
   const showVaga = vagas[indexVaga]  
   const candidatos = vagas[indexVaga].candidatos.reduce((texto, candidato) => {
     return texto + "\n - " + candidato
-  })
+  }, "")
   alert("\n Nome: "+ showVaga.nome+ 
         "\n Descrição: " + showVaga.descricao + 
         "\n Data Limite: " + showVaga.dataLimite+ 
@@ -68,7 +68,7 @@ function subscribeCandidato(){
 }
 
 function deleteVaga(){
-  const indexVaga = prompt("Qual o indice da vaga que deseja excluir?")
+  const indexVaga = parseInt(prompt("Qual o indice da vaga que deseja excluir?"))
   const vagaWithIndex = vagas[indexVaga]
   const candidatos = vagaWithIndex.candidatos.reduce((text, candidato) => {
     return text + " \n - " + candidato
@@ -80,7 +80,8 @@ function deleteVaga(){
   + "\n Candidatos: " + candidatos)
 
   if(confirmPromt){
-    return vagas.splice(vagaWithIndex)
+    vagas.splice(vagaWithIndex,  1)
+    alert("Vaga excluída!")
   }
 }
 
@@ -91,38 +92,37 @@ function execute(){
 
   do{
     optionChosen = showOption()
-    console.log(vagas)
+
     switch (optionChosen) {
       case "1":
-        alert("op 1")
         showCandidates()
 
         optionChosen
       break;
 
       case "2":
-        alert("op 2")
+
         createNewVaga()
 
         optionChosen
       break;
 
       case "3":
-        alert("op 3")
+
         showVagaByIndex()
 
         optionChosen
       break;
 
       case "4":
-        alert("op 4")
+
         subscribeCandidato()
 
         optionChosen
       break;
 
       case "5":
-        alert("op 5")
+
         deleteVaga()
 
         optionChosen
